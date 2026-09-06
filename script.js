@@ -371,9 +371,11 @@ function activatePowerUp(type) {
     switch(type) {
         case 'multiBall':
             if (gameState.balls.length < 5) {
-                gameState.balls.forEach(ball => {
+/*                gameState.balls.forEach(ball => {
                     gameState.balls.push({...ball});
-                });
+                }); */
+                dx: -gameState.balls[0].dx
+                dy: Math.abs(gameState.balls[0].dy)
             }
             gameState.powerups.multiBall.active = true;
             gameState.powerups.multiBall.activationTime = currentTime;
